@@ -1655,4 +1655,7 @@ public final class SimulatedCommands extends BaseCommands
     public void setCellInfoListRate(int rateInMillis, Message response) {
         unimplemented(response);
     }
+
+    public boolean needsOldRilFeature(String feature) { return false; }
+
 }
