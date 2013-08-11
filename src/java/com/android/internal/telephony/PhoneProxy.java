@@ -69,6 +69,7 @@ public class PhoneProxy extends Handler implements Phone {
         mResetModemOnRadioTechnologyChange = SystemProperties.getBoolean(
                 TelephonyProperties.PROPERTY_RESET_ON_RADIO_TECH_CHANGE, false);
         mIccSmsInterfaceManagerProxy = new IccSmsInterfaceManagerProxy(
+                phone.getContext(),
                 phone.getIccSmsInterfaceManager());
         mIccPhoneBookInterfaceManagerProxy = new IccPhoneBookInterfaceManagerProxy(
                 phone.getIccPhoneBookInterfaceManager());
@@ -966,6 +967,14 @@ public class PhoneProxy extends Handler implements Phone {
     @Override
     public int getLteOnCdmaMode() {
         return mActivePhone.getLteOnCdmaMode();
+    }
+
+    /**
+     * {@hide}
+     */
+    @Override
+    public int getLteOnGsmMode() {
+        return mActivePhone.getLteOnGsmMode();
     }
 
     @Override
